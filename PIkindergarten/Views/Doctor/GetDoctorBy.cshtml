@@ -1,0 +1,59 @@
+﻿
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Lastname
+            </th>
+            <th>
+                phonenumber
+            </th>
+            <th>
+                Birthday
+            </th>
+            <th>
+                roleadmin
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+       
+            <tr>
+                <td>
+                    @Model["name"]
+                </td>
+                <td>
+                    @Model["lastname"]
+                </td>
+                <td>
+                    @Model["phonenumber"]
+                </td>
+                <td>
+                    @Model["birthday"]
+                </td>
+                <td>
+                    @Model["roleA"]
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        
+    </tbody>
+</table>
