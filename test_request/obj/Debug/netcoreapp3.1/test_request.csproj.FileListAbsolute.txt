@@ -89,3 +89,4 @@ C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\test_request.dll
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\test_request.pdb
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\test_request.genruntimeconfig.cache
+C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\Razor\Views\Visitor_Back\Visitors.cshtml.g.cs
