@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RgVX1G1s0YBM0VpiO26VL/+NGboml92D4LJ8FAUCEc4GZVJKpQ5TxHXHxMU2zOlP9A+GEW1hwhrTO/SzNtmk8A==",
+  "dgSpecHash": "4jQpNFgaFs58EkgGTFGMslpYMR7qXC9CXyyiTAMu6X+CpUFAMNdSe9aZ2yGRs4iTcvnEX882BXCXHsv+xsv1Jw==",
   "success": true,
-  "projectFilePath": "/Users/MrStealYourMom/Projects/test_request/test_request/test_request.csproj",
+  "projectFilePath": "C:\\Users\\solta\\Documents\\Pi\\JrdnEnft-Platform\\test_request\\test_request.csproj",
   "expectedPackageFiles": [
-    "/Users/MrStealYourMom/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\solta\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }
