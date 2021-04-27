@@ -1,0 +1,57 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            doctor
+        </th>
+        <th>
+            heure debut
+        </th>
+        <th>
+           minute debut
+        </th>
+        <th>
+            heure fin
+        </th>
+        <th>
+            minute fin
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item["doctor"]
+        </td>
+        <td>
+            @item["hdebut"]
+        </td>
+        <td>
+            @item["mdebut"]
+        </td>
+        <td>
+            @item["hfin"]
+        </td>
+        <td>
+            @item["mfin"]
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

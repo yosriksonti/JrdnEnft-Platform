@@ -88,6 +88,8 @@ namespace PIkindergarten.Controllers
             return View();
         }
 
+
+        /*
         public async System.Threading.Tasks.Task<ActionResult> UpdateDoctorAsync(int id)
         {
             Doctor doctor = new Doctor();
@@ -126,53 +128,27 @@ namespace PIkindergarten.Controllers
         }
 
 
+        */
 
 
 
-
-        /*
+        
 
             // GET: Doctor/Edit/5
-            public ActionResult Edit(int id)
+            public ActionResult Edit(int? id)
             {
-                JObject response = sendGetRequestDoctorID(id);
-                if (response == null)
-                {
-                    return HttpNotFound();
 
-                }
-
-                Console.WriteLine(response);
-
-                Doctor doctor = new Doctor(
-                    int.Parse(response["id"].ToString()),
-                    response["Name"].ToString(),
-                    response["Lastname"].ToString(),
-                    response["Email"].ToString(),
-                    response["Address"].ToString(),
-                    response["Password"].ToString(),
-                    response["Image"].ToString(),
-                    response["Cin"].ToString(),
-                    response["Login"].ToString(),
-                    int.Parse(response["phonenumber"].ToString()),
-                    Convert.ToDateTime(response["Birthday"].ToString()),
-                    (RoleAdmin)Enum.Parse(typeof(RoleAdmin), response["roleadmin"].ToString()),
-                    bool.Parse(response["isActive"].ToString()),
-                    null,
-                    null,
-                    null
-
-
-                    ) ; 
-                return View(doctor);
+            ViewBag.doctorId = id;
+            return View();
             }
 
             // POST: Doctor/Edit/5
             [HttpPost]
-            public ActionResult Edit(int id, Doctor doctor)
+            public ActionResult Edit(Doctor doctor,int ? id)
             {
                 string values =
                    "{"
+                  + "\"id\" : \"" + doctor.id + "\","
                   + "\"address\" : \"" + doctor.Address + "\","
                   + "\"password\" : \"" + doctor.Password + "\","
                   + "\"cin\" : " + doctor.Cin + ","
@@ -185,14 +161,14 @@ namespace PIkindergarten.Controllers
                   + "\"login\" : \"" + doctor.Login + "\","
                   + "\"birthday\" : \"" + doctor.Birthday.ToString("yyyy-MM-dd") + "\""
                   + "}";
+            HttpResponseMessage resp = rest.sendPutRequest(values, "http://localhost:8080/ModifyDoctorById/"+id);
+            Console.WriteLine(resp);
+            
 
-
-                HttpResponseMessage resp = rest.sendPutRequest(values, "http://localhost:8080/ModifyDoctorById/"+id);
-
-                return Edit(id);
-
-            }
-            */
+                
+            return RedirectToAction("Index");
+        }
+            
 
         // GET: Doctor/Delete/5
         public ActionResult Delete(int id)

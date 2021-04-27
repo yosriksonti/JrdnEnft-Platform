@@ -11,11 +11,11 @@ namespace PIkindergarten.Models.doctor
         [Key]
         public int id { get; set; }
         public virtual Doctor Doc { get; set; }
-        private int doctor { get; set; }
-        private int hdebut { get; set; }
-        private int mdebut { get; set; }
-        private int hfin { get; set; }
-        private int mfin { get; set; }
+        public int doctor { get; set; }
+        public int hdebut { get; set; }
+        public int mdebut { get; set; }
+        public int hfin { get; set; }
+        public int mfin { get; set; }
 
         public virtual ICollection<AppoitementDoc> Apps { get; set; }
 

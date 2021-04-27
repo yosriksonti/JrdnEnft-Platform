@@ -3,6 +3,7 @@ using PIkindergarten.Models.doctor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
@@ -20,15 +21,47 @@ namespace PIkindergarten.Controllers
         public JArray sendGetRequest()
         {
             string response = client.GetStringAsync("http://127.0.0.1:8080/getAllDoctorAvaibility").GetAwaiter().GetResult();
-            var doctors = JArray.Parse(response);
-            return doctors;
+            var docAvai = JArray.Parse(response);
+            return docAvai;
         }
 
         // GET: DoctorAvaibility
         public ActionResult Index()
         {
-            return View();
+            JArray response = sendGetRequest();
+            return View(response);
         }
+
+        public ActionResult GetDoctorAvaibilityById(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            JObject response = sendGetRequestDoctorID(id);
+
+            if (response == null)
+            {
+                return HttpNotFound();
+            }
+            return View(response);
+
+
+        }
+
+        public JObject sendGetRequestDoctorID(int? id)
+        {
+            string response = client.GetStringAsync("http://localhost:8080/getCreneauById/" + id).GetAwaiter().GetResult();
+            var doctors = JObject.Parse(response);
+
+
+            return doctors;
+        }
+
+
+
+
+
 
         // GET: DoctorAvaibility/Details/5
         public ActionResult Details(int id)
