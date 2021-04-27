@@ -54,7 +54,6 @@ C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\bin\Debug\netcoreapp3
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\bin\Debug\netcoreapp3.1\test_request.Views.dll
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\bin\Debug\netcoreapp3.1\test_request.Views.pdb
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\test_request.csprojAssemblyReference.cache
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\test_request.AssemblyInfoInputs.cache
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\test_request.AssemblyInfo.cs
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\test_request.csproj.CoreCompileInputs.cache
@@ -90,3 +89,5 @@ C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\test_request.pdb
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\test_request.genruntimeconfig.cache
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\Razor\Views\Visitor_Back\Visitors.cshtml.g.cs
+C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\Razor\Views\Visitor_Front\Favorites.cshtml.g.cs
+C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\test_request.csprojAssemblyReference.cache

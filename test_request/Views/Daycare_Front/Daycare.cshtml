@@ -132,17 +132,26 @@
                             </ul>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel venenatis felis. Fusce id lectus sit amet nisi ornare ultricies. In sagittis lacinia lorem et tristique. Quisque mauris neque, sollicitudin sit amet imperdiet in, scelerisque sit amet arcu. In vehicula sem eget nisi convallis, a mattis orci imperdiet. Curabitur vitae sapien vel lectus sagittis consequat. Nullam enim velit, dignissim vel viverra ac, eleifend ut tellus.</p>
                             <p>Nunc at tincidunt nisl. Nullam fringilla quis odio vitae eleifend. Quisque sed mi erat. In hac habitasse platea dictumst. Vivamus mattis nunc quis turpis pretium sollicitudin. In eu semper justo. Phasellus facilisis hendrerit massa, sed auctor lacus convallis et. Vestibulum ac odio interdum, efficitur nisl ut, sollicitudin arcu. Donec commodo elementum tempus. In hac habitasse platea dictumst.</p>
+
+                            <!--class-gallery end-->
+                            <h3>Published Posts</h3>
                             <div class="class-gallery">
-                                <div class="class-gallery-img"><img src="@ViewBag.daycare["logo"]" alt=""></div>
+                                <div class="row">
+                                    @foreach (var post in ViewBag.posts)
+                                    {
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+                            <div class="class-gallery-img">
+                                <a href="/Post_Front/Post/@post["id"]" title="" class="html5lightbox" data-group="set1">
+                                    <img src="@post["media"]" alt="" style="height: 7rem;">
+                                    <p>@post["title"]</p>
+                                </a>
+                            </div>
+                            <!--class-gallery-img end-->
+                        </div>}
+
+                                </div>
                                 <!--class-gallery-img end-->
                             </div>
-                            <!--class-gallery end-->
-                            <p>Donec luctus hendrerit sagittis. Cras pellentesque convallis tempus. Praesent finibus lacus at urna fringilla, fermentum sodales enim sodales. Sed vel eros a mi egestas consectetur. Donec eleifend ornare mauris, in tincidunt ex laoreet et. Donec eu arcu euismod, pellentesque arcu eu, condimentum nibh. Sed blandit id mauris sed suscipit.</p>
-                            <p>Nam aliquet euismod metus in hendrerit. Quisque finibus facilisis velit, eget posuere nulla suscipit ut. Vivamus non quam massa. Nulla facilisi. Mauris vitae viverra leo. Praesent nec risus non dui iaculis vehicula at id ante. Morbi hendrerit leo libero, in dictum dolor condimentum eu. Etiam dictum enim neque, eu pharetra orci euismod at.</p>
-                            <h3>Education Programs</h3>
-                            <p>Aliquam dui tellus, sollicitudin eget malesuada at, blandit id magna. Integer non mauris urna. Curabitur placerat metus in pulvinar imperdiet. Vivamus bibendum eu tellus quis consectetur. Aliquam tincidunt dui augue, at porttitor quam semper et.</p>
-                            <p>Vestibulum aliquam leo sed ultricies ullamcorper. Aliquam eu rutrum est, quis faucibus ligula. Nulla dignissim odio lorem, id imperdiet sem dignissim eget. Nullam feugiat quam nec dolor posuere tempus sed eu mauris. Phasellus tempus sapien at nunc volutpat, et convallis magna ultrices. Duis eu neque ut arcu accumsan consectetur.</p>
-
                             <a href="classes.html" title="" class="btn-default">Enroll Now<i class="fa fa-long-arrow-alt-right"></i></a>
                             <a href="classes.html" title="" class="btn-default">Add to Favorite<i class="fa fa-long-arrow-alt-right"></i></a>
                         </div>
@@ -226,7 +235,8 @@
     <script src="assets/js/bundle.min.js"></script>
     <script src="assets/js/button.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180910402-1"></script>
-    <script>window.dataLayer = window.dataLayer || [];
+    <script>
+    window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'UA-180910402-1');</script>

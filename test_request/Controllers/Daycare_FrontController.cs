@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
-using test_request.Models.daycare;
+using System;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,10 +17,13 @@ namespace test_request.Controllers
             ViewBag.daycares = response;
             return View();
         }
-        public IActionResult Daycare(int ? id)
+        public IActionResult Daycare(int? id)
         {
-            JObject response = rest.sendGetObjectRequest("http://127.0.0.1:8082/daycares/"+id);
+            JObject response = rest.sendGetObjectRequest("http://127.0.0.1:8082/daycares/" + id);
+            JArray response2 = rest.sendGetArrayRequest("http://127.0.0.1:8082/daycares/" + id + "/posts");
             ViewBag.daycare = response;
+            ViewBag.posts = response2;
+            Console.WriteLine(response2);
             return View();
         }
     }
