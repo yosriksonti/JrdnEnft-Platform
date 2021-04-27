@@ -1,0 +1,23 @@
+﻿@{ViewBag.Title = "calend";}
+
+@if (ViewBag.EventList != null)
+{
+    <table>
+        <tr>event
+        </tr>
+        @foreach (var item in ViewBag.EventList)
+        {
+            <tr>
+                <td>
+                    @item
+                </td>
+            </tr>
+        }
+        
+
+    </table>
+    }
+    else
+    {
+        < div > < h3 > yyyyyyyyyyyyyyyyyyyyyyyy </ h3 ></ div >
+        }
