@@ -764,15 +764,6 @@
     <Content Include="Event\assets\fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="Event\assets\fonts\Pe-icon-7-stroke.woff" />
     <Content Include="Event\assets\fonts\Pe-icon-7-stroke﹖.eot" />
-    <Content Include="code.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="credentials.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Credential.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Files\credentials.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
