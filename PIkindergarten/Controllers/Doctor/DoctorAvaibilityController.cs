@@ -72,6 +72,8 @@ namespace PIkindergarten.Controllers
         // GET: DoctorAvaibility/Create
         public ActionResult Create(DoctorAvailability doctorAvailability)
         {
+            JArray doctors = rest.sendGetArrayRequest("http://localhost:8080/getAllDoctors");
+            ViewBag.doctors = doctors;
             string values =
               "{"
                + "\"doctor\" : " + doctorAvailability.doctor + ","

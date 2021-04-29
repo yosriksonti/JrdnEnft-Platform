@@ -17,6 +17,7 @@ namespace PIkindergarten.Controllers
         private static readonly HttpClient client = new HttpClient();
         private REST rest = new REST();
 
+       
 
         public JArray sendGetRequest()
         {
@@ -42,7 +43,7 @@ namespace PIkindergarten.Controllers
 
 
 
-            Console.WriteLine(response);
+          
             if (response == null)
             {
                 return HttpNotFound();
@@ -78,6 +79,9 @@ namespace PIkindergarten.Controllers
         // GET: DoctorAvaibility/Create
         public ActionResult Create(AppoitementDoc appDoc)
         {
+            JArray avaibilities = rest.sendGetArrayRequest("http://localhost:8080/getAllDoctorAvaibility");
+            ViewBag.avaibilities = avaibilities;
+
             string values =
               "{"
                + "\"day\" : \"" + appDoc.day.ToString("yyyy-MM-dd") + "\" ,"
@@ -128,6 +132,13 @@ namespace PIkindergarten.Controllers
         {
             HttpResponseMessage response = rest.sendDeleteRequest("http://localhost:8080/deleteDoctorAvaibilityById/" + id);
             return RedirectToAction("Index", "DoctorAvaibility/Index");
+        }
+
+
+        public ActionResult ConfirmRdv(int? id)
+        {
+            HttpResponseMessage response = rest.sendPutRequest("","http://localhost:8080/confirmeRv/"+id);
+            return RedirectToAction("Index", "DoctorAppoitement/GetDoctorAppoitementByDoctorId/1");
         }
     }
 }

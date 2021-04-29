@@ -23,18 +23,28 @@
         </div>
 
         <div class="form-group">
+
             @Html.LabelFor(model => model.idParent, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.idParent, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.idParent, "", new { @class = "text-danger" })
+
+                @Html.DropDownListFor(m => m.idParent, new List<SelectListItem>
+                                                                                  { new SelectListItem{    Text="1", Value="1"}
+                                                                                 
+                                                   }, "please select your id", new { @class = "form-control etc" })
+        
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.idAvaibility, htmlAttributes: new { @class = "control-label col-md-2" })
+        
             <div class="col-md-10">
-                @Html.EditorFor(model => model.idAvaibility, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.idAvaibility, "", new { @class = "text-danger" })
+                <label for="idAvaibility" class="control-label col-md-2"> idAvaibility </label>
+                <select name="idAvaibility">
+                    @foreach (var avaibility in ViewBag.avaibilities)
+                    {
+                        <option value="@avaibility["id"]"> @avaibility["id"]</option>
+                    }
+                </select>
             </div>
         </div>
 
@@ -49,5 +59,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "/GetDoctorAppoitementByDoctorId/1")
 </div>

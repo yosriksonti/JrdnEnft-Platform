@@ -98,6 +98,7 @@
                                         <th>minute debut</th>
                                         <th>heure fin</th>
                                         <th>minute fin</th>
+                                        <th>RDV</th>
 
                                     </tr>
                                 </thead>
@@ -106,7 +107,7 @@
                                     {
                                     <tr>
                                         <td>
-                                            @item["doctor"]
+                                            @item["doc"]["id"] @item["doc"]["name"]
                                         </td>
                                         <td>
                                             @item["hdebut"]
@@ -120,6 +121,7 @@
                                         <td>
                                             @item["mfin"]
                                         </td>
+
                                         <td>
                                         <td><a href="/DoctorAvaibility/Edit/@item["id"]"><button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow btn btn-info">Edit</button></a></td>
                                         <td><a href="/DoctorAvaibility/Delete/@item["id"]"><button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow btn btn-info">delete</button></a></td>

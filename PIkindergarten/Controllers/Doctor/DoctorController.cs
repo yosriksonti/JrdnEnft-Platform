@@ -110,7 +110,7 @@ namespace PIkindergarten.Controllers
                   + "\"address\" : \"" + doctor.Address + "\","
                   + "\"password\" : \"" + doctor.Password + "\","
                   + "\"cin\" : " + doctor.Cin + ","
-                  + "\"is_active\" :  true ,"
+                  + "\"is_active\" : \"" +true+ "\","
                   + "\"phonenumber\" : " + doctor.phonenumber + ","
                   + "\"email\" : \"" + doctor.Email + "\","
                   + "\"name\" : \"" + doctor.Name + "\","
@@ -124,7 +124,7 @@ namespace PIkindergarten.Controllers
             
 
                 
-            return RedirectToAction("Index");
+            return RedirectToAction("/Index");
         }
             
 
@@ -135,7 +135,7 @@ namespace PIkindergarten.Controllers
         public ActionResult Delete(int? id)
         {
             HttpResponseMessage response = rest.sendDeleteRequest("http://localhost:8080/deleteDoctor/" + id);
-            return RedirectToAction("Index", "Doctor");
+            return RedirectToAction("/Index", "Doctor");
         }
     }
 }

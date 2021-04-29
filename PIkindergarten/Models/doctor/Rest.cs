@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -18,8 +19,14 @@ namespace PIkindergarten.Models.doctor
       .Accept
       .Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
+        public JArray sendGetArrayRequest(string url)
+        {
+            string response = client.GetStringAsync(url).GetAwaiter().GetResult();
+            var jarray = JArray.Parse(response);
 
-      
+            return jarray;
+        }
+
 
         public HttpResponseMessage sendPostRequest(string body, string url)
         {
