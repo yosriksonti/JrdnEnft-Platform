@@ -7,5 +7,6 @@ namespace PIkindergarten.Models.parent
 {
     public class Parent
     {
+        public int id { get; set; }
     }
 }

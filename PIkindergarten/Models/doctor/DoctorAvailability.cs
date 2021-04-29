@@ -17,7 +17,7 @@ namespace PIkindergarten.Models.doctor
         public int hfin { get; set; }
         public int mfin { get; set; }
 
-        public virtual ICollection<AppoitementDoc> Apps { get; set; }
+        //public virtual ICollection<AppoitementDoc> Apps { get; set; }
 
 
 

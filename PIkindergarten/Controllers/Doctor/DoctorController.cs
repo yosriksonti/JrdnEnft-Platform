@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 
+
+using Microsoft.Owin.Host.SystemWeb;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNetCore.Mvc;
@@ -89,50 +91,6 @@ namespace PIkindergarten.Controllers
         }
 
 
-        /*
-        public async System.Threading.Tasks.Task<ActionResult> UpdateDoctorAsync(int id)
-        {
-            Doctor doctor = new Doctor();
-            using (var httpClient = new HttpClient())
-            {
-                using (var response = await httpClient.GetAsync("http://127.0.0.1:8080/Doctor/" +id))
-                {
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-                    doctor = JsonConvert.DeserializeObject<Doctor>(apiResponse);
-                }
-            }
-            return View(doctor);
-        }
-
-
-        [HttpPost]
-        public async System.Threading.Tasks.Task<ActionResult> UpdateDoctorAsync(Doctor doctor)
-        {
-            Doctor Receiveddoctor = new Doctor();
-            using (var httpClient = new HttpClient())
-            {
-                var content = new MultipartFormDataContent();
-                content.Add(new StringContent(doctor.id.ToString()),"Id");
-                content.Add(new StringContent(doctor.Name),"Name");
-                content.Add(new StringContent(doctor.Lastname),"Lastname");
-                content.Add(new StringContent(doctor.Address),"Address");
-
-                using (var response = await httpClient.PutAsync("http://localhost:8080/ModifyDoctorById", content))
-                {
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-                    ViewBag.Result = "Success";
-                    Receiveddoctor = JsonConvert.DeserializeObject<Doctor>(apiResponse);
-                }
-            }
-            return View(Receiveddoctor);
-        }
-
-
-        */
-
-
-
-        
 
             // GET: Doctor/Edit/5
             public ActionResult Edit(int? id)
@@ -170,26 +128,14 @@ namespace PIkindergarten.Controllers
         }
             
 
-        // GET: Doctor/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+   
 
         // POST: Doctor/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+      
+        public ActionResult Delete(int? id)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            HttpResponseMessage response = rest.sendDeleteRequest("http://localhost:8080/deleteDoctor/" + id);
+            return RedirectToAction("Index", "Doctor");
         }
     }
 }

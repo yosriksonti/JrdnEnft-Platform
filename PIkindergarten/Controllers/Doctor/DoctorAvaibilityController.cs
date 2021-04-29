@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
-
+using Microsoft.Owin.Host.SystemWeb;
 namespace PIkindergarten.Controllers
 {
     public class DoctorAvaibilityController : Controller
@@ -70,69 +70,60 @@ namespace PIkindergarten.Controllers
         }
 
         // GET: DoctorAvaibility/Create
-        public ActionResult Create()
+        public ActionResult Create(DoctorAvailability doctorAvailability)
         {
+            string values =
+              "{"
+               + "\"doctor\" : " + doctorAvailability.doctor + ","
+               + "\"hdebut\" : " + doctorAvailability.hdebut + ","
+               + "\"mdebut\" : " + doctorAvailability.mdebut + ","
+               + "\"hfin\" : " + doctorAvailability.hfin + ","
+               + "\"mfin\" : " + doctorAvailability.mfin 
+
+               + "}";
+
+
+            HttpResponseMessage resp = rest.sendPostRequest(values, "http://localhost:8080/addDoctorAvaibility");
+
             return View();
         }
 
-        // POST: DoctorAvaibility/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
+    
 
         // GET: DoctorAvaibility/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int ? id)
         {
+            ViewBag.doctorAvaibilityId = id;
             return View();
         }
 
         // POST: DoctorAvaibility/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(DoctorAvailability doctorAvailability, int? id)
         {
-            try
-            {
-                // TODO: Add update logic here
+            string values =
+               "{"
+               + "\"id\" : \"" + doctorAvailability.id + "\","
+               + "\"doctor\" : " + doctorAvailability.doctor + ","
+               + "\"hdebut\" : " + doctorAvailability.hdebut + ","
+               + "\"mdebut\" : " + doctorAvailability.mdebut + ","
+               + "\"hfin\" : " + doctorAvailability.hfin + ","
+               + "\"mfin\" : " + doctorAvailability.mfin
+              + "}";
+            HttpResponseMessage resp = rest.sendPutRequest(values, "http://localhost:8080//modifyDoctorAvaibility/" + id);
+            Console.WriteLine(resp);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+
+
+            return RedirectToAction("/Index");
         }
 
-        // GET: DoctorAvaibility/Delete/5
-        public ActionResult Delete(int id)
+ 
+        public ActionResult Delete(int ? id)
         {
-            return View();
-        }
-
-        // POST: DoctorAvaibility/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            HttpResponseMessage response = rest.sendDeleteRequest("http://localhost:8080/deleteDoctorAvaibilityById/" + id);
+            return RedirectToAction("Index", "DoctorAvaibility/Index");
         }
     }
 }

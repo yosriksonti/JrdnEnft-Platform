@@ -1,0 +1,51 @@
+﻿
+
+@{
+    ViewBag.Title = "GetDoctorAppoitementByDoctorId";
+}
+
+<h2>GetDoctorAppoitementByDoctorId</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           day
+        </th>
+        <th>
+         idParent
+        </th>
+        <th>
+           idAvaibility
+        </th>
+        <th>
+          isConfirmed
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item["day"]
+        </td>
+        <td>
+            @item["idParent"]
+        </td>
+        <td>
+            @item["idAvaibility"]
+        </td>
+        <td>
+            @item["isConfirmed"]
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
