@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using test_request.Models;
+using System.Diagnostics;
 using System.Net.Http;
-using System.Runtime.Serialization.Json;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using test_request.Models;
 using test_request.Models.daycare;
 
 
@@ -27,10 +20,7 @@ namespace test_request.Controllers
 
         public IActionResult Index()
         {
-
-            JArray response = rest.sendGetArrayRequest("http://127.0.0.1:8082/daycares");
-            ViewBag.daycares = response;
-            return View();
+            return RedirectToAction("Index", "Daycare_Front");
         }
 
         public IActionResult Privacy()
@@ -43,9 +33,9 @@ namespace test_request.Controllers
         {
             string values =
                  "{"
-                +"\"x\" : "+position.x+","
-                +"\"y\" : "+position.y+" "
-                +"}";
+                + "\"x\" : " + position.x + ","
+                + "\"y\" : " + position.y + " "
+                + "}";
             HttpResponseMessage resp = rest.sendPostRequest(values, "http://127.0.0.1:8082/position/add");
             return Index();
 
@@ -57,6 +47,6 @@ namespace test_request.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        
+
     }
 }

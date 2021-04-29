@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Net.Http;
 using test_request.Models.daycare;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -52,7 +48,7 @@ namespace test_request.Controllers
                 + "\"director\" : { "
                     + "\"id\" : \"" + daycare.director + "\" "
                 + " }"
-                +"}";
+                + "}";
             HttpResponseMessage resp = rest.sendPostRequest(values, "http://127.0.0.1:8082/daycares/add");
             Console.WriteLine(resp);
             return Add_Daycare();

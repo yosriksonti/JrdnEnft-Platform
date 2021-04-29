@@ -13,7 +13,9 @@ namespace test_request.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            JArray response = rest.sendGetArrayRequest("http://127.0.0.1:8082/daycares");
+            JArray response = rest.sendGetArrayRequest("http://127.0.0.1:8082/visitor/14/daycares");
+            JObject response3 = rest.sendGetObjectRequest("http://127.0.0.1:8082/Visitor/14");
+            ViewBag.visitor = response3;
             ViewBag.daycares = response;
             return View();
         }
@@ -26,5 +28,7 @@ namespace test_request.Controllers
             Console.WriteLine(response2);
             return View();
         }
+
+
     }
 }

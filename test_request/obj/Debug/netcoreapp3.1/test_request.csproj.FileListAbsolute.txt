@@ -91,3 +91,9 @@ C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\Razor\Views\Visitor_Back\Visitors.cshtml.g.cs
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\Razor\Views\Visitor_Front\Favorites.cshtml.g.cs
 C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\test_request.csprojAssemblyReference.cache
+C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\Razor\Views\Visitor_Front\VIP.cshtml.g.cs
+C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\Razor\Views\Visitor_Front\paymentSuccess.cshtml.g.cs
+C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\Razor\Views\Visitor_Front\Add_Visitor.cshtml.g.cs
+C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\Razor\Views\Visitor_Front\Update_Visitor.cshtml.g.cs
+C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\Razor\Views\Visitor_Front\Visitor.cshtml.g.cs
+C:\Users\solta\Documents\Pi\JrdnEnft-Platform\test_request\obj\Debug\netcoreapp3.1\Razor\Views\Visitor_Front\Closest_Daycares.cshtml.g.cs

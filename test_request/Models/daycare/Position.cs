@@ -1,5 +1,4 @@
-﻿using System;
-namespace test_request.Models.daycare
+﻿namespace test_request.Models.daycare
 {
     public class Position
     {

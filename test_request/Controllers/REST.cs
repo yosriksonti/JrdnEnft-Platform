@@ -1,7 +1,5 @@
-﻿using System;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System.Net.Http;
-using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Text;
 
@@ -33,8 +31,15 @@ namespace test_request.Controllers
             return jobject;
         }
 
+        public string sendGetRequest(string url)
+        {
+            string response = client.GetStringAsync(url).GetAwaiter().GetResult();
 
-        public HttpResponseMessage sendPostRequest(string body,string url)
+            return response;
+        }
+
+
+        public HttpResponseMessage sendPostRequest(string body, string url)
         {
             var httpContent = new StringContent(body, Encoding.UTF8, "application/json");
 
@@ -55,6 +60,17 @@ namespace test_request.Controllers
         {
             HttpResponseMessage response = client.DeleteAsync(url).GetAwaiter().GetResult();
             return response;
+
+        }
+        public JArray sendPostArrayRequest(string body, string url)
+        {
+            var httpContent = new StringContent(body, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = client.PostAsync(url, httpContent).GetAwaiter().GetResult();
+            string strresponse = response.Content.ReadAsStringAsync().Result;
+            var jarray = JArray.Parse(strresponse);
+
+            return jarray;
 
         }
     }

@@ -95,9 +95,12 @@
                         </nav>
                         <!--nav end-->
                         <ul class="social-links ml-auto">
-                            <li><a href="#" title=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" title=""><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="#" title=""><i class="fab fa-instagram"></i></a></li>
+                            <a href="/Visitor_Front/Visitor/14" title="" class="btn-default">Profile</a>
+
+                            @if (ViewBag.visitor["vip"] != true)
+                            {
+                                <a href="/Visitor_Front/VIP/14" title="" class="btn-default">Become VIP!<i class="fa fa-long-arrow-alt-right"></i></a>
+                            }
                         </ul>
                     </div>
                     <!--navigation-bar end-->
@@ -166,7 +169,7 @@
                             <div class="classes-col wow fadeInUp" data-wow-duration="1000ms">
                                 <div class="class-thumb"><img src="@daycare["logo"]" alt="" class="w-100" style=" height: 10rem; "> <a href="contacts.html" title="" class="crt-btn"><img src="assets/img/icon10.png" alt=""></a></div>
                                 <div class="class-info">
-                                    <h3><a href="/Daycares_Front/Daycare/@daycare["id"]" title="">@daycare["daycareName"]</a></h3>
+                                    <h3><a href="/Daycare_Front/Daycare/@daycare["id"]" title="">@daycare["daycareName"]</a></h3>
                                     <h4>@daycare["region"]</h4> <span>@daycare["reputation"]</span>
                                 </div>
                             </div>
@@ -176,7 +179,7 @@
                         
 
                     </div>
-                    <div class="lnk-dv text-center"><a href="classes.html" title="" class="btn-default">Classes <i class="fa fa-long-arrow-alt-right"></i></a></div>
+                    <div class="lnk-dv text-center"><a href="/Visitor_Front/Favorites/13" title="" class="btn-default">Favorite Daycares <i class="fa fa-long-arrow-alt-right"></i></a></div>
                 </div>
                 <!--classes-sec end-->
             </div>
@@ -186,7 +189,8 @@
             <div class="container">
                 <div class="section-title text-center">
                     <h2>Our Awesome<br>Teachers</h2>
-                    <p>Quisque id ultrices tellus, ac sodales ex. Cras nec ante viverra, bibendum justo eget, lacinia dui. Donec ligula ligula, elementum sit amet</p>
+                    <a href="/Visitor_Front/Add_Visitor" title="" class="btn-default">Subscribe</a>
+
                 </div>
                 <!--section-title end-->
                 <div class="teachers">
@@ -269,6 +273,7 @@
                                     <span>Teacher</span>
                                 </div>
                             </div>
+
                             <!--teacher end-->
                         </div>
                     </div>
