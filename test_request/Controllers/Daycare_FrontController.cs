@@ -25,9 +25,40 @@ namespace test_request.Controllers
         }
         public IActionResult Daycare(int ? id)
         {
-            JObject response = rest.sendGetObjectRequest("http://127.0.0.1:8082/daycares/"+id);
+            JObject response = rest.sendGetObjectRequest("http://127.0.0.1:8082/daycares/" + id);
+            JArray response2 = rest.sendGetArrayRequest("http://127.0.0.1:8082/daycares/"+id+"/posts");
             ViewBag.daycare = response;
+            ViewBag.posts = response2;
+            Console.WriteLine(response2);
             return View();
+        }
+        public IActionResult Post(int? id)
+        {
+            JObject response = rest.sendGetObjectRequest("http://127.0.0.1:8082/posts/" + id);
+            ViewBag.post = response;
+            return View();
+        }
+
+        public IActionResult Like_Post(int? id)
+        {
+            string values =
+                  "{"
+                + "\"id\" : \"" + id + "\","
+                + "\"likes\" : \"" + 1 + "\" "
+                + "}";
+            HttpResponseMessage response = rest.sendPutRequest(values, "http://127.0.0.1:8082/posts/update/likes");
+            return RedirectToAction("Post", "Daycare_Front", new { id = id });
+        }
+
+        public IActionResult Dislike_Post(int? id)
+        {
+            string values =
+                  "{"
+                + "\"id\" : \"" + id + "\","
+                + "\"dislikes\" : \"" + 1 + "\" "
+                + "}";
+            HttpResponseMessage response = rest.sendPutRequest(values,"http://127.0.0.1:8082/posts/update/dislikes");
+            return RedirectToAction("Post","Daycare_Front",new {id = id });
         }
     }
 }

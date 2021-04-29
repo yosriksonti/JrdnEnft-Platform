@@ -93,7 +93,8 @@
                                             <th>Name</th>
                                             <th>Region</th>
                                             <th>Reputation</th>
-
+                                            <th>Update</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -103,8 +104,10 @@
                                             <td>@daycare["daycareName"]</td>
                                             <td>@daycare["region"]</td>
                                             <td>@daycare["reputation"]</td>
-
-                                            
+                                            <td><a href="/Daycare_Back/Posts/@daycare["id"]"><button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow btn btn-info">Posts</button></a></td>
+                                            <td><a href="/Daycare_Back/Add_Post/@daycare["id"]"><button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow btn btn-info">Add Post</button></a></td>
+                                            <td><a href="/Daycare_Back/Update_Daycare/@daycare["id"]"><button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow btn btn-info">Update</button></a></td>
+                                            <td><a href="/Daycare_Back/Delete_Daycare/@daycare["id"]"><button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow btn btn-info">Delete</button></a></td>
                                         </tr>
                                     }
                                  
@@ -115,6 +118,8 @@
                                             <th>Name</th>
                                             <th>Region</th>
                                             <th>Reputation</th>
+                                            <th>Update</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </tfoot>
                                 </table>

@@ -1,7 +1,4 @@
-﻿
-@model test_request.Models.daycare.Position
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,7 +45,7 @@
                                     <img src="assets/img/icon3.png" alt="">
                                     <div class="contact-tt">
                                         <h4>Address</h4>
-                                        <span>@ViewBag.daycares[0]["daycareName"]</span>
+                                        <span>Franklin St, Greenpoint Ave</span>
                                     </div>
                                 </div>
                                 <!--contact-info end-->
@@ -129,16 +126,7 @@
                             <div class="banner-text wow fadeInLeft" data-wow-duration="1000ms">
                                 <h2>The Smarter Way to Learn <span>Anything</span></h2>
                                 <p>Mauris malesuada enim eget blandit gravida. Duis hendrerit cursus turpis, id mollis est rutrum nec. Sed interdum nisi id libero tincidunt, sit amet vestibulum tortor porttitor. Cras ligula lacus, ullamcorper sed</p>
-                                @using (Html.BeginForm("Index", "Home", FormMethod.Post))
-                                {
-                                    <form class="search-form">
-                                        @Html.TextBoxFor(m => m.x)
-                                        @Html.TextBoxFor(m => m.y)
-                                        <button>
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </form>
-                                }
+                                <form class="search-form"><input type="text" name="search" placeholder="Search Class"> <button><i class="fa fa-search"></i></button></form>
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-5">
@@ -622,36 +610,98 @@
             </div>
         </section>
         <!--newsletter-sec end-->
-        
+        <footer>
+            <div class="container">
+                <div class="top-footer">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="widget widget-about">
+                                <img src="assets/img/logo.png" alt="">
+                                <p>Vivamus porta efficitur nibh nec convallis. Vestibulum egestas eleifend justo. Ut tellus ipsum, accumsan</p>
+                            </div>
+                            <!--widget-about end-->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="widget widget-contact">
+                                <ul class="contact-add">
+                                    <li>
+                                        <div class="contact-info">
+                                            <img src="assets/img/icon1.png" alt="">
+                                            <div class="contact-tt">
+                                                <h4>Call</h4>
+                                                <span>+2 342 5446 67</span>
+                                            </div>
+                                        </div>
+                                        <!--contact-info end-->
+                                    </li>
+                                    <li>
+                                        <div class="contact-info">
+                                            <img src="assets/img/icon2.png" alt="">
+                                            <div class="contact-tt">
+                                                <h4>Work Time</h4>
+                                                <span>Mon - Fri 8 AM - 5 PM</span>
+                                            </div>
+                                        </div>
+                                        <!--contact-info end-->
+                                    </li>
+                                    <li>
+                                        <div class="contact-info">
+                                            <img src="assets/img/icon3.png" alt="">
+                                            <div class="contact-tt">
+                                                <h4>Address</h4>
+                                                <span>Franklin St, Greenpoint Ave</span>
+                                            </div>
+                                        </div>
+                                        <!--contact-info end-->
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--widget-contact end-->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="widget widget-links">
+                                <h3 class="widget-title">Quick Links</h3>
+                                <ul>
+                                    <li><a href="about.html" title="">About Us</a></li>
+                                    <li><a href="classes.html" title="">Our Classes</a></li>
+                                    <li><a href="teachers.html" title="">School Teachers</a></li>
+                                    <li><a href="events.html" title="">Recent Events</a></li>
+                                    <li><a href="blog.html" title="">Our News</a></li>
+                                    <li><a href="schedule.html" title="">Schedule</a></li>
+                                </ul>
+                            </div>
+                            <!--widget-links end-->
+                        </div>
+                    </div>
+                </div>
+                <!--top-footer end-->
+                <div class="bottom-footer">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p>© Copyrights 2020 Shelly All rights reserved</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <ul class="social-links">
+                                <li><a href="#" title=""><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" title=""><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#" title=""><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--bottom-footer end-->
+            </div>
+        </footer>
         <!--footer end-->
     </div>
     <script src="assets/js/bundle.min.js"></script>
     <script src="assets/js/button.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180910402-1"></script>
-    <script>window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-180910402-1');</script>
-
-    <script runat="server">void Page_Load(Object sender, EventArgs e)
-        {
-            // Manually register the event-handling method for
-            // the Click event of the Button control.
-            Button1.Click += new EventHandler(this.GreetingBtn_Click);
-        }
-
-        void GreetingBtn_Click(Object sender,
-            EventArgs e)
-        {
-            // When the button is clicked,
-            // change the button text, and disable it.
-
-            Button clickedButton = (Button)sender;
-            clickedButton.Text = "...button clicked...";
-            clickedButton.Enabled = false;
-
-            // Display the greeting label text.
-            GreetingLabel.Visible = true;
-        }</script>
+    <script>
+window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'UA-180910402-1');
+    </script>
 </body>
 </html>
